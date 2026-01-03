@@ -70,6 +70,20 @@ $stmt->execute($params);
 $applications = $stmt->fetchAll();
 
 /* ===============================
+   DAY TRANSLATION (ID → EN)
+================================ */
+$days = [
+    'Senin'   => 'Monday',
+    'Selasa'  => 'Tuesday',
+    'Rabu'    => 'Wednesday',
+    'Kamis'   => 'Thursday',
+    'Jumat'   => 'Friday',
+    'Sabtu'   => 'Saturday',
+    'Minggu'  => 'Sunday',
+];
+
+
+/* ===============================
    B. RE-REGISTRATION REPORT
 ================================ */
 $sql_re_registration = "
@@ -207,7 +221,7 @@ $processing = $stmt->fetchAll();
                             <td><?= $a['no_registrasi'] ?></td>
                             <td><?= htmlspecialchars($a['nama']) ?></td>
                             <td><?= $a['tanggal_daftar'] ?></td>
-                            <td><?= $a['hari'] ?></td>
+                            <td><?= $days[$a['hari']] ?? $a['hari'] ?></td>
                             <td><?= $a['jam'] ?></td>
                         </tr>
                     <?php endforeach;
