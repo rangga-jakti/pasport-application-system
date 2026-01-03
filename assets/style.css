@@ -1,0 +1,215 @@
+/* =================================================
+   GLOBAL BASE
+================================================= */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
+  color: #212529;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =================================================
+   CARD & DASHBOARD
+================================================= */
+.card {
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.card-body {
+  padding: 1.25rem 1.35rem;
+}
+
+.dashboard-card {
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Statistik / angka */
+.card h3,
+.card h4,
+.card h5 {
+  letter-spacing: 0.3px;
+}
+
+/* =================================================
+   TYPOGRAPHY POLISH
+================================================= */
+h4,
+h5,
+h6 {
+  letter-spacing: 0.2px;
+}
+
+h4.fw-bold {
+  font-size: 1.35rem;
+}
+
+small {
+  font-size: 0.85rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+/* =================================================
+   ALERT
+================================================= */
+.alert {
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+/* =================================================
+   SIDEBAR
+================================================= */
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.06);
+}
+
+aside h4 {
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.nav-link {
+  border-radius: 8px;
+  margin-bottom: 4px;
+  padding: 10px 14px;
+  transition: background 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+}
+
+/* =================================================
+   CONTENT AREA
+================================================= */
+main {
+  margin-left: 260px;
+  padding: 1.75rem;
+  animation: fadeIn 0.35s ease-in-out;
+}
+
+/* Biar halaman terasa “penuh” & rapi */
+main::after {
+  content: "";
+  display: block;
+  height: 40px;
+}
+
+/* =================================================
+   TABLE SCROLL (ANTI MAKIN KEBAWAH)
+================================================= */
+.table-wrapper {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.table-wrapper thead th {
+  position: sticky;
+  top: 0;
+  background: #f8f9fa;
+  z-index: 2;
+}
+
+/* =================================================
+   BUTTON POLISH
+================================================= */
+.btn {
+  border-radius: 8px;
+}
+
+.btn-sm {
+  border-radius: 6px;
+}
+
+/* =================================================
+   FOOTER TEXT
+================================================= */
+p.text-muted {
+  font-size: 0.85rem;
+}
+
+/* =================================================
+   ANIMATION
+================================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =================================================
+   ACTION CARD (QUICK ACTION)
+================================================= */
+.action-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.18s ease;
+  cursor: pointer;
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* efek klik */
+.action-card:active {
+  transform: scale(0.97);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* biar link card ga ada efek aneh */
+.card-link {
+  display: block;
+}
+
+/* =================================================
+   SOFT HOVER FOR ALL CARDS (GLOBAL FEEL)
+================================================= */
+.card {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* =================================================
+   KPI CARD EMPHASIS
+================================================= */
+.card h3 {
+  font-size: 1.6rem;
+}
+
+.card h5 {
+  font-size: 1.15rem;
+}
