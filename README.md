@@ -1,37 +1,45 @@
 # Passport Application System
 
-A web-based administrative system that simulates the complete passport
-application workflow.
+An internal administrative web system that simulates the end-to-end passport application workflow.
 
-Built with PHP and MySQL, this project focuses on backend logic, data flow,
-queue management, and process tracking through a structured dashboard interface.
+Built with native PHP and MySQL, this project focuses on backend system design, process-driven workflows, and administrative state management, rather than public user interaction.
 
-The system represents a real-world service workflow, designed for learning,
-demonstration, and portfolio purposes.
+This system is designed for learning, demonstration, and portfolio purposes, with emphasis on real-world backend architecture.
+
+---
+
+## System Context
+
+This application represents an internal service system used by authorized administrative staff.
+
+Applicants do not interact directly with this system.
+All application data is entered, processed, and managed by authenticated admins, reflecting real-world government or enterprise service workflows.
 
 ---
 
 ## Overview
 
-This application manages a multi-stage passport submission process,
-starting from initial registration, re-registration & document validation,
-processing, and administrative reporting.
+The system manages a multi-stage passport application lifecycle, including:
 
-It emphasizes clean backend structure, clear process separation,
-and maintainable, readable code.
+- Initial data registration
+- Re-registration and document validation
+- Queue number assignment
+- Processing and payment simulation
+- Administrative reporting
+- Each stage is handled as a distinct backend process, mirroring real administrative operations.
 
 ---
 
 ## Core Features
 
-- Secure authentication using PHP sessions
-- Structured passport application workflow
-- Re-registration & document validation (approved / rejected)
-- Automatic queue number assignment
+- Admin-only authentication using PHP sessions
+- Structured, multi-stage application workflow
+- Re-registration & document validation (approve / reject)
+- Automatic queue number generation
 - Processing and payment simulation
 - Administrative dashboard with live status indicators
 - PDF report generation
-- Clean UI using Bootstrap
+- Clean and functional UI using Bootstrap
 
 ---
 
@@ -44,6 +52,18 @@ and maintainable, readable code.
 5. Administrative reporting
 
 Each stage is clearly separated to reflect real-world administrative systems.
+
+---
+
+## Architecture Overview
+
+The backend is structured with clear separation of concerns:
+Request
+-> Controller / Handler
+-> Business Logic (Service)
+-> Data Access (Repository / Query Layer)
+
+This design allows the system to remain portable across backend stacks (e.g. PHP, Python, Node.js) with minimal conceptual changes.
 
 ---
 
@@ -70,12 +90,12 @@ Each stage is clearly separated to reflect real-world administrative systems.
 
 ## Project Structure
 
-assets/ - CSS & JS files  
-auth/ - Authentication modules  
-config/ - Database configuration  
-helpers/ - Helper functions  
-layouts/ - Layout templates  
-sandbox/ - Experimental scripts
+assets/   - CSS & JS files  
+auth/     - Authentication modules  
+config/   - Database configuration  
+helpers/  - Helper functions  
+layouts/  - Layout templates  
+sandbox/  - Experimental scripts
 
 ---
 
@@ -87,15 +107,29 @@ These files are not part of the main application flow.
 
 ---
 
+## Scope & Limitations
+
+✔ Internal administrative system
+✔ Admin authentication & access control
+✔ Backend-driven workflow management
+
+✖ Public user registration
+✖ Applicant self-service portal
+✖ Online document submission by applicants
+
+A separate public-facing self-service application can be developed to handle applicant-side interactions.
+
+---
+
 ## Purpose
 
 This project is built as an academic and portfolio project to demonstrate:
 
 - Backend system design
-- Database-driven workflows
+- Process-oriented workflows
 - Session-based authentication
-- CRUD operations
-- State-based process handling
+- Database-driven state handling
+- Separation of concerns in backend architecture
 
 ---
 
